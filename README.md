@@ -30,6 +30,8 @@ Single event type publisher. Allows for type safe custom arguments publishing.
 ```ts
 import { Publisher } from '@honkjs/publisher';
 
+// the type of function can be anything that returns void or boolean.
+// any other params are allowed.
 type MyEvent = (a: string, b: number) => void;
 
 const event = new Publisher<MyEvent>();
@@ -80,4 +82,4 @@ store.setState({ data: 'different' });
 unsub();
 ```
 
-This functionality is built for you (almost identically) in @honkjs/store.
+This functionality is built for you in [@honkjs/store.](https://github.com/honkjs/store)

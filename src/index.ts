@@ -8,7 +8,7 @@ export interface IUnsubscribe {
 /**
  * Describes a basic publisher function type.
  * A function that takes any arguments, and returns nothing or a boolean.
- * If 'true' is returned, then event propagation is stopped.
+ * If 'true' (isHandled) is returned, then event propagation is stopped.
  */
 export type IPublish = (...args: any[]) => void | boolean;
 
