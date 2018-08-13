@@ -47,6 +47,26 @@ unsub();
 event.publish('hello?', 0); // output: nothing
 ```
 
+# Canceling
+
+Event handlers are always fired in the order they were added.
+
+If a handler returns true, publisher will cancel publishing to handlers after that one.
+
+```ts
+event.subscribe((a, b) => {
+  if (b > 5) return true; // handled
+});
+
+event.subscribe((a, b) => {
+  console.log('published', a, b);
+});
+
+event.publish('hello', 1); // output: published, hello, 1
+
+event.publish('hello?', 10); // output: nothing.
+```
+
 # Creating a store
 
 Let's build out a store that generates events when the state is changed.
