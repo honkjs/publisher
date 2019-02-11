@@ -23,6 +23,8 @@
 
 # honkjs/publisher
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/honkjs/publisher.svg)](https://greenkeeper.io/)
+
 Single event type publisher. Allows for type safe custom arguments publishing.
 
 # Example
