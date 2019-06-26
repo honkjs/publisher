@@ -61,7 +61,9 @@ export class Publisher<T extends IPublish> {
     try {
       for (let i = 0; i < listeners.length; i++) {
         const sub = listeners[i];
-        if (sub.apply(sub, args) === true) {
+        // Note: docs say apply accepts the "arguments" array-like object.
+        // Possibly related: https://github.com/microsoft/TypeScript/issues/29055
+        if (sub.apply(sub, args as any) === true) {
           break; // handled
         }
       }
