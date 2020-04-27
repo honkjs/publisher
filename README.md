@@ -98,7 +98,7 @@ const unsub = store.subscribe((s) => {
   console.log('updated', s);
 });
 
-store.setState({ data: 'different' });
+store.setState((s) => ({ data: 'different' }));
 // outputs: updated, { data: different }
 
 unsub();
